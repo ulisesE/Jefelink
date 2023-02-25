@@ -1,7 +1,7 @@
 <?php
 include 'admin/engine/db.php';
 header("Location: Yummy/");
-?>
+?> 
 <!-- <!DOCTYPE html>
 <html>
   <head>
