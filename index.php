@@ -1,6 +1,6 @@
 <?php
 include 'admin/engine/db.php';
-header('location: /Yummy')
+header("Location: Yummy/");
 ?>
 <!DOCTYPE html>
 <html>
