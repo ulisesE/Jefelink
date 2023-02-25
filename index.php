@@ -2,7 +2,7 @@
 include 'admin/engine/db.php';
 header("Location: Yummy/");
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -383,4 +383,4 @@ body {
       }
     });
 </script>
-</html>
+</html> -->
