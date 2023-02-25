@@ -1,5 +1,6 @@
 <?php
 include 'admin/engine/db.php';
+header('location: /Yummy')
 ?>
 <!DOCTYPE html>
 <html>
