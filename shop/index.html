@@ -270,7 +270,7 @@
         // Detecta cuando se pasa el cursor por encima de un elemento de la lista
         $("section div.product").hover(function(){
             imgSrc = $(this).find('img').attr('src');
-            imgSrc2 = $(this).data('img2');
+            imgSrc2 = $(this).find('img').data('img2');
             $(this).find('img').attr('src', imgSrc2);
         });
     });
