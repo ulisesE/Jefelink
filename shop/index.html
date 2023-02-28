@@ -59,7 +59,7 @@
                     <div class="col mb-5">
                         <div class="card h-100 product">
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/dalle1.png" alt="..." data-img2="img/dalle2.png">
+                            <img class="card-img-top" src="img/dalle1.png" alt="..." data-img1="img/dalle1.png" data-img1="img/dalle1.png" data-img2="img/dalle2.png">
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -80,7 +80,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/dalle2.png" alt="..." data-img2="img/dalle3.png">
+                            <img class="card-img-top" src="img/dalle2.png" alt="..." data-img1="img/dalle1.png" data-img2="img/dalle3.png">
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -110,7 +110,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/dalle3.png" alt="..." data-img2="img/dalle4.png">
+                            <img class="card-img-top" src="img/dalle3.png" alt="..." data-img1="img/dalle1.png" data-img2="img/dalle4.png">
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -130,7 +130,7 @@
                     <div class="col mb-5">
                         <div class="card h-100 product">
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/dalle4.png" alt="..." data-img2="img/dalle1.png">
+                            <img class="card-img-top" src="img/dalle4.png" alt="..." data-img1="img/dalle1.png" data-img2="img/dalle1.png">
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -159,7 +159,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/dalle1.png" alt="..." data-img2="img/dalle2.png">
+                            <img class="card-img-top" src="img/dalle1.png" alt="..." data-img1="img/dalle1.png" data-img2="img/dalle2.png">
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -179,7 +179,7 @@
                     <div class="col mb-5">
                         <div class="card h-100 product">
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/dalle2.png" alt="..." data-img2="img/dalle3.png">
+                            <img class="card-img-top" src="img/dalle2.png" alt="..." data-img1="img/dalle1.png" data-img2="img/dalle3.png">
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -200,7 +200,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/dalle3.png" alt="..." data-img2="img/dalle4.png">
+                            <img class="card-img-top" src="img/dalle3.png" alt="..." data-img1="img/dalle1.png" data-img2="img/dalle4.png">
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -228,7 +228,7 @@
                     <div class="col mb-5">
                         <div class="card h-100 product">
                             <!-- Product image-->
-                            <img class="card-img-top" src="img/dalle4.png" alt="..." data-img2="img/dalle1.png">
+                            <img class="card-img-top" src="img/dalle4.png" alt="..." data-img1="img/dalle1.png" data-img2="img/dalle1.png">
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -271,10 +271,12 @@
         var imgSrc="";
         $("section div.product").hover(function(){
             imgSrc = $(this).find('img').attr('src');
+            $(this).find('img').data('img1', imgSrc);
+
             imgSrc2 = $(this).find('img').data('img2');
             $(this).find('img').attr('src', imgSrc2);
         },function () {
-            $(this).find('img').attr('src', imgSrc);
+            $(this).find('img').attr('src', $(this).find('img').data('img1');
         });
     });
     </script>
