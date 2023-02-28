@@ -267,13 +267,12 @@
         <script src="js/scripts.js">
             $(document).ready(function() {
               // Detecta cuando se pasa el cursor por encima de un elemento de la lista
-              $("section div.product").hover(function() {
-                // Obtiene la URL de la imagen que queremos mostrar
-                var imgSrc = $(this).find('img').attr('src');
-                console.log(imgSrc);
-                // Cambia la imagen principal por la imagen del elemento de la lista
-                $('img#imagen-principal').attr('src', imgSrc);
-              });
+              $("section div.product").hover(function(){
+                    imgSrc = $(this).find('img').attr('src');
+                    console.log(imgSrc);
+                    $('img#imagen-principal').attr('src', imgSrc);
+
+                })
             });
         </script>
     </body>
