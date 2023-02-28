@@ -269,6 +269,7 @@
               $("section div.product").hover(function() {
                 // Obtiene la URL de la imagen que queremos mostrar
                 var imgSrc = $(this).find('img').attr('src');
+                console.log(imgSrc);
                 // Cambia la imagen principal por la imagen del elemento de la lista
                 $('img#imagen-principal').attr('src', imgSrc);
               });
