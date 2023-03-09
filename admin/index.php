@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
-echo "string";
+session_start();
+echo $_SESSION['auth'];
 ?>
 <head>
     <title>Pixels - Admin</title>
