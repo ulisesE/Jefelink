@@ -1,9 +1,9 @@
 <?php
-include 'header.php';
 session_start();
 if (!isset($_SESSION['auth'])) {
     header("location: login.html");
 }
+include 'header.php';
 ?>
 <head>
     <title>Pixels - Admin</title>
