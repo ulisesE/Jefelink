@@ -2,7 +2,7 @@
 include 'header.php';
 session_start();
 if (!isset($_SESSION['auth'])) {
-    echo "asdasdasd";
+    header("location: login.html");
 }
 ?>
 <head>
