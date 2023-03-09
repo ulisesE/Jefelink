@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
 }
 ?>
 <head>
-    <title>Pixels - Admin</title>
+    <title>Pixels - Admsin</title>
 </head>
 <body>
     <div id="layoutSidenav_content">
