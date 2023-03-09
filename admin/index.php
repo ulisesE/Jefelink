@@ -1,5 +1,9 @@
 <?php
 include 'header.php';
+session_start();
+if (!isset($_SESSION['token'])) {
+    header("location: login.html");
+}
 ?>
 <head>
     <title>Pixels - Admin</title>
