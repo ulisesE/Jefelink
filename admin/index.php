@@ -1,10 +1,7 @@
 <?php
 include 'header.php';
 session_start();
-if (!isset($_SESSION)) {
-    //header("location: login.html");
-    header("Location: http://www.example.com/something.php?a=1");
-}
+print_r($_SESSION);
 ?>
 <head>
     <title>Pixels - Admin</title>
