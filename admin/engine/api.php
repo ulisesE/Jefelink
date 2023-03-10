@@ -3,8 +3,7 @@ header('Access-Control-Allow-Origin: *');
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 include 'db.php';
-if (!isset($_GET['opc']))
-{
+if (!isset($_GET['opc'])){
     $sql = "SELECT sum(precio) as suma,
         monthName(CAST(DATE_SUB(rt1.horaI, INTERVAL DAYOFMONTH(rt1.horaI)-1 DAY) AS DATE)) AS \"mes\",
         CAST(DATE_SUB(rt1.horaI, INTERVAL DAYOFMONTH(rt1.horaI)-1 DAY) AS DATE) AS \"mesNum\"
@@ -59,7 +58,6 @@ if (!isset($_GET['opc']))
                     "porMes" => $tiempoPorMes,
                     "Diario" => $diario,
                 );
-                
                 echo json_encode($array);
             break;
             case '2' : 
@@ -77,6 +75,24 @@ if (!isset($_GET['opc']))
                 $array = array(
                     "porMes" => $tiempoPorMes,
                     "Diario" => $diario,
+                );
+                
+                echo json_encode($array);
+            break;
+            case '3' : 
+                $sql = "select * datos where correo like '".trim($_GET['user'])."' and contrase like '".trim($_GET['pass'])."'";
+
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0){
+                    while ($row = $result->fetch_assoc()){
+                        //id    correo  contrase    ID_Empleado 
+                        $usuario[] = $row;
+                    }
+                }
+                 header('Content-Type: application/json; charset=utf-8');
+                $array = array(
+                    "usaurio" => $usuario,
+                    "link" => '/index.php',
                 );
                 
                 echo json_encode($array);
