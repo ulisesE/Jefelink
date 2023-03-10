@@ -92,7 +92,7 @@ if (!isset($_GET['opc'])){
                 }
                  header('Content-Type: application/json; charset=utf-8');
                 $array = array(
-                    "usaurio" => $sql,
+                    "usaurio" => $usuario,
                     "link" => '/index.php',
                 );
                 
