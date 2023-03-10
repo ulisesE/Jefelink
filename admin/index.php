@@ -10,7 +10,7 @@ if (!isset($_SESSION['auth'])) {
 include 'header.php';
 ?>
 <head>
-    <title>Pixels - Admin</title>
+    <title><?= $_SESSION['auth']['nombreNegocio']?> - Admin</title>
 </head>
 <body>
     <div id="layoutSidenav_content">
