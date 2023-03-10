@@ -81,7 +81,7 @@ if (!isset($_GET['opc'])){
                 echo json_encode($array);
             break;
             case '3' : 
-                $sql = "select * datos where correo like '".trim($_GET['user'])."' and contrase like '".trim($_GET['pass'])."'";
+                $sql = "SELECT * FROM datos WHERE correo LIKE '".$_GET['user']."' and contrase LIKE '".$_GET['pass']."'";
 
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){
