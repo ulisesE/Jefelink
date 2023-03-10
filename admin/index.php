@@ -7,17 +7,16 @@ if (!isset($_SESSION['auth'])) {
         header("location: login.html");
     }
 }
+
+if (echo $_SESSION['auth']['id']==2) {
 include 'header.php';
 ?>
 <head>
-    <title><?= $_SESSION['auth']['nombreNegocio']; ?> - Admin</title>
+    <title><?= $_SESSION['auth']['nombreNegocio'];?> - Admin</title>
 </head>
 <body>
     <div id="layoutSidenav_content">
         <main>
-            <div><?php var_dump($_SESSION['auth']);
-            echo "<br>";
-            echo $_SESSION['auth']['nombreNegocio']; ?></div>
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Tablero</h1>
                 <ol class="breadcrumb mb-4">
@@ -218,3 +217,7 @@ include 'header.php';
         </script>
     </body>
 </html>
+
+<?php
+}
+?>
