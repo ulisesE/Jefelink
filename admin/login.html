@@ -79,7 +79,7 @@
                         url: "engine/api.php",
                         data: { opc:'3',user:inputEmail, pass:inputPassword },
                         success: function (result) {
-                            if (result.usaurio==null) {
+                            if (result.usaurio!=null) {
                              window.location.href = result.link;
                             }
                         }
