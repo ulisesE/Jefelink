@@ -2,6 +2,10 @@
 session_start();
 if (!isset($_SESSION['auth'])) {
     header("location: login.html");
+}else{
+    if ($_SESSION['auth']==0) {
+        header("location: login.html");
+    }
 }
 include 'header.php';
 ?>

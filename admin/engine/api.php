@@ -88,8 +88,12 @@ if (!isset($_GET['opc'])){
                     while ($row = $result->fetch_assoc()){
                         //id    correo  contrase    ID_Empleado 
                         $usuario[] = $row;
+                        $_SESSION['auth']= $usuario[0];
                     }
+                }else{
+                    $_SESSION['auth']=0;
                 }
+
                  header('Content-Type: application/json; charset=utf-8');
                 $array = array(
                     "usaurio" => $usuario,
