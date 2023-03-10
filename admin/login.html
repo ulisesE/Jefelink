@@ -79,7 +79,9 @@
                         url: "engine/api.php",
                         data: { opc:'3',user:inputEmail, pass:inputPassword },
                         success: function (result) {
-                            console.log(result);
+                            if (result.usaurio==null) {
+                             window.location.href = result.link;
+                            }
                         }
                     });
                 }
