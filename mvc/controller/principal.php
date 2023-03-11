@@ -27,8 +27,11 @@ class principalController{
 		$this->page_title = 'Iniciando Sesion';
 		$this->view = 'panelAdmin';
 		/* Id can from get param or method param */
-		$this->noteObj->validaDatos($_POST);
-		return $this->noteObj->getNoteById($id);
+		$obj = $this->noteObj->validaDatos($_POST);
+		$obj = $this->noteObj->getDatosById($obj['id']);
+		$_SESSION['usuario'] = $obj;
+		header("location: /index.php");
+		return false;
 	}
 
 	/* Create or update note */

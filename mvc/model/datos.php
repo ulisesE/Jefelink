@@ -38,15 +38,14 @@ class Datos {
 
 	/* Get note by id */
 	public function validaDatos($params){
-		var_dump($params);
 		if(is_null($params['email'])) return false;
 		if(is_null($params['password'])) return false;
+		$correo = $params['email'];
+		$pass = $params['password'];
 		$this->getConection();
-		$sql = "SELECT * FROM ".$this->table. " WHERE correo = ? AND contrase = ?";
+		$sql = "SELECT * FROM ".$this->table. " WHERE correo like \"$correo\" AND contrase like \"$pass\" ";
 		$stmt = $this->conection->prepare($sql);
-		$stmt->execute([$params['email']]);
-		$stmt->execute([$params['password']]);
-
+		$stmt->execute();
 		return $stmt->fetch();
 	}
 
