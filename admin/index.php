@@ -9,13 +9,14 @@ if (!isset($_SESSION['auth'])) {
 }
 
 if (echo $_SESSION['auth']['id']==2) {
+    // code...
+}
 include 'header.php';
 ?>
 <head>
     <title><?= $_SESSION['auth']['nombreNegocio'];?> - Admin</title>
 </head>
 <body>
-    
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
@@ -218,7 +219,3 @@ include 'header.php';
         </script>
     </body>
 </html>
-
-<?php
-}
-?>
