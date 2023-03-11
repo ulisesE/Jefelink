@@ -8,7 +8,7 @@ class noteController{
 
 	public function __construct() {
 		$this->view = 'list_note';
-		$this->page_title = '';
+		$this->page_title = 'Listando notas';
 		$this->noteObj = new Note();
 	}
 
