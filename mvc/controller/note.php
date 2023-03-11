@@ -34,7 +34,7 @@ class noteController{
 		$id = $this->noteObj->save($_POST);
 		$result = $this->noteObj->getNoteById($id);
 		$_GET["response"] = true;
-		return $result;
+		return $id;
 	}
 
 	/* Confirm to delete */
