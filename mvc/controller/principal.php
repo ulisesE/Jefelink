@@ -4,7 +4,7 @@ class principalController{
 	public $view;
 
 	public function __construct() {
-		$this->view = 'login';
+		$this->view = 'template/login';
 		$this->page_title = '';
 		/*$this->noteObj = new Note();*/
 	}
