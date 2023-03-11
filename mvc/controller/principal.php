@@ -24,12 +24,21 @@ class principalController{
 
 	/* List all notes */
 	public function login(){
-		$this->page_title = 'Iniciando Sesion';
-		$this->view = 'panelAdmin';
+		//$this->page_title = 'Iniciando Sesion';
+		//$this->view = 'panelAdmin';
 		/* Id can from get param or method param */
 		$obj = $this->noteObj->validaDatos($_POST);
 		$obj = $this->noteObj->getDatosById($obj['id']);
 		$_SESSION['usuario'] = $obj;
+		header("location: /index.php");
+		return false;
+	}
+	/* List all notes */
+	public function logout(){
+		//$this->page_title = 'Cerrando sesion';
+		//$this->view = 'panelAdmin';
+		session_unset();
+		session_destroy();
 		header("location: /index.php");
 		return false;
 	}
