@@ -1,21 +1,18 @@
 <?php 
-
-require_once 'model/note.php';
-
-class noteController{
+class principalController{
 	public $page_title;
 	public $view;
 
 	public function __construct() {
-		$this->view = 'list_note';
+		$this->view = 'login';
 		$this->page_title = '';
-		$this->noteObj = new Note();
+		/*$this->noteObj = new Note();*/
 	}
 
 	/* List all notes */
-	public function list(){
-		$this->page_title = 'Listado de notas';
-		return $this->noteObj->getNotes();
+	public function login(){
+		$this->page_title = 'login';
+		return true;
 	}
 
 	/* Load note for edit */
