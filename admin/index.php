@@ -35,7 +35,7 @@ include 'header.php';
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a class="dropdown-item" href="#!" onclick="cerrarSesion()">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -239,6 +239,16 @@ include 'header.php';
                 window.location.href = "engine/ControlTiempo.php?opc=pagado&folio="+idX;
             }
             
+            function cerrarSesion(){
+                jQuery.ajax({
+                    type: "POST",
+                    url: "engine/api.php",
+                    data: { opc:'cerrarSesion'},
+                    success: function (result) {
+                         window.location.href = result.link;
+                    }
+                });
+            }
         </script>
     </body>
 </html>
