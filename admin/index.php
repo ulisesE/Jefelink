@@ -934,6 +934,18 @@ include 'header.php';
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script type="text/javascript">
+            function cerrarSesion(){
+                jQuery.ajax({
+                    type: "POST",
+                    url: "engine/api.php",
+                    data: { opc:'cerrarSesion'},
+                    success: function (result) {
+                         window.location.href = result.link;
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
 
