@@ -6,7 +6,7 @@ define("DB_USER", 'u290360044_lonko');
 define("DB_PASS", 'lG+$IbNxx9');
 
 /* Default options */
-define("DEFAULT_CONTROLLER", "inicio");
-define("DEFAULT_ACTION", "principal");
+define("DEFAULT_CONTROLLER", "note");
+define("DEFAULT_ACTION", "list");
 
 ?>
