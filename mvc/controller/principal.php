@@ -1,4 +1,5 @@
 <?php 
+require_once 'model/datos.php';
 class principalController{
 	public $page_title;
 	public $view;
@@ -6,21 +7,27 @@ class principalController{
 	public function __construct() {
 		$this->view = 'template/login';
 		$this->page_title = '';
-		/*$this->noteObj = new Note();*/
+		$this->noteObj = new Datos();
+	}
+
+	/* List all notes */
+	public function principal(){
+		if (isset($_SESSION['usuario']) && $_SESSION['usuario']!=null) {
+			$this->page_title = 'panelAdmin';
+			$this->view = 'panel/inicio';
+		}else{
+			$this->page_title = 'login';
+			$this->view = 'template/login';
+		}
+		return true;
 	}
 
 	/* List all notes */
 	public function login(){
-		$this->page_title = 'login';
-		return true;
-	}
-
-	/* Load note for edit */
-	public function edit($id = null){
-		$this->page_title = 'Editar nota';
-		$this->view = 'edit_note';
+		$this->page_title = 'Iniciando Sesion';
+		$this->view = 'panelAdmin';
 		/* Id can from get param or method param */
-		if(isset($_GET["id"])) $id = $_GET["id"];
+		$this->noteObj->validaDatos($_POST);
 		return $this->noteObj->getNoteById($id);
 	}
 

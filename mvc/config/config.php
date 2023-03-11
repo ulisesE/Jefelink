@@ -7,6 +7,6 @@ define("DB_PASS", 'lG+$IbNxx9');
 
 /* Default options */
 define("DEFAULT_CONTROLLER", "principal");
-define("DEFAULT_ACTION", "login");
+define("DEFAULT_ACTION", "principal");
 
 ?>
