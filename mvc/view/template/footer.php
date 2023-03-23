@@ -19,5 +19,24 @@
 		<script src="/src/assets/demo/chart-bar-demo.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 		<script src="/src/js/datatables-simple-demo.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+		window.addEventListener("load", (event) => {
+			$('#loaderDiv').hide();
+			$('body').css('overflow','visible');
+	        
+	        $('#sidebarToggle').click(function(){
+    			$.ajax({
+                	method: "POST",
+                	url: "/index.php?controller=util&action=cambiarToggleNav",
+                	data: {
+                	},
+                	success: function(responseText) {
+
+                	}
+    	        });
+			});
+    	});
+		</script>
 	</body>
 </html>

@@ -14,10 +14,10 @@
 <?php 
 if (isset($_SESSION['usuario'])&& $_SESSION['usuario']!=null) {
 	?> 
-<body class="sb-nav-fixed">
+<body class="sb-nav-fixed <?= $_SESSION['navToggle']=='true'? '' : 'sb-sidenav-toggled' ?>">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html"><?php echo $_SESSION['usuario']['nombreNegocio']; ?> Admin</a>
+            <a class="navbar-brand ps-3" href="/index.php"><?php echo $_SESSION['usuario']['nombreNegocio']; ?> Admin</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -35,7 +35,7 @@ if (isset($_SESSION['usuario'])&& $_SESSION['usuario']!=null) {
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="index.php?controller=principal&action=logout">Logout</a></li>
+                        <li><a class="dropdown-item" href="/index.php?controller=principal&action=logout">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -46,7 +46,7 @@ if (isset($_SESSION['usuario'])&& $_SESSION['usuario']!=null) {
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="/index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -105,8 +105,8 @@ if (isset($_SESSION['usuario'])&& $_SESSION['usuario']!=null) {
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <div class="small">Usuario:</div>
+                        <?php echo $_SESSION['usuario']['Nombre']." ".$_SESSION['usuario']['Apellido']; ?>
                     </div>
                 </nav>
             </div>
